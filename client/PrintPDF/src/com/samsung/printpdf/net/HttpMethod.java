@@ -1,5 +1,5 @@
 package com.samsung.printpdf.net;
 
-public class HttpMethod {
-
+public enum HttpMethod {
+	POST,GET;
 }

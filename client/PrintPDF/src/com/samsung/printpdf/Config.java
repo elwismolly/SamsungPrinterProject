@@ -6,6 +6,7 @@ public class Config {
 	
 	public static final String KEY_TOKEN = "token";
 	public static final String APP_ID = "com.samsung.printpdf";
+	public static String username="";
 	
 	
 	//token is like session to store login information	

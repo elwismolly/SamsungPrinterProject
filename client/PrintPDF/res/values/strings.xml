@@ -8,5 +8,6 @@
     <string name="title_activity_print">PrintActivity</string>
     <string name="password_activity_login">Password:</string>
     <string name="username_activity_login">Username:</string>
+    <string name="choose_a_file_activity_print">Choose a File...</string>
 
 </resources>

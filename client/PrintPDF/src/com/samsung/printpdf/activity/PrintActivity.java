@@ -1,18 +1,55 @@
 package com.samsung.printpdf.activity;
 
+import java.io.File;
+
+import com.samsung.printpdf.Config;
 import com.samsung.printpdf.R;
+import com.samsung.printpdf.net.UploadFile;
+import com.samsung.printpdf.net.UploadFile.FailCallback;
+import com.samsung.printpdf.net.UploadFile.SuccessCallback;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 public class PrintActivity extends Activity {
 
+	File uploadFile = null;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_print);
+		findViewById(R.id.btnPrint).setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				print();
+				
+			}
+		});
+	}
+
+	protected void print() {
+		if(uploadFile!=null){
+			UploadFile upload = new UploadFile(new SuccessCallback() {
+				
+				@Override
+				public void onSuccess(String result) {
+					// TODO Auto-generated method stub
+					
+				}
+			}, new FailCallback() {
+				
+				@Override
+				public void onFail() {
+					// TODO Auto-generated method stub
+					
+				}
+			}, uploadFile, Config.username);
+		}
+		
 	}
 
 	@Override
